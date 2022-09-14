@@ -23,7 +23,7 @@ describe('Test the Employee Class',() => {
     })
     it('can obtain name via getName() method', () => {
         const me = new Employee (1, 'chrisgtr34@gmail.com', 'chris');
-        expect(me.get.Name).toEqual('chris');
+        expect(me.getName()).toEqual('chris');
     })
     it('can obtain id via getID() method', () => {
         const me = new Employee (1, 'chrisgtr34@gmail.com', 'chris');
