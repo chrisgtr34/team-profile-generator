@@ -1,6 +1,7 @@
 const generateTeam = function (team) {
+    let html = '';
+
     function generateManagerHTML(managers) {
-        let html = '';
         managers.forEach(function (manager) {
             html += `
              <article class="col-md-4 ">
@@ -18,8 +19,9 @@ const generateTeam = function (team) {
 
             
             `;
-            return html;
+            
         });
+        return html;
     }
 
     generateManagerHTML(team.managers);
@@ -59,3 +61,5 @@ const generateHTML = function(team) {
     
     `;
 }
+
+module.exports = generateHTML;
