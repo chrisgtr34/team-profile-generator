@@ -18,6 +18,7 @@ const generateTeam = function (team) {
 
             
             `;
+            return html;
         });
     }
 
