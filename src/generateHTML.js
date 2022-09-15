@@ -1,17 +1,17 @@
 const generateTeam = function (team) {
-    function generateManagerHTML(managers){
+    function generateManagerHTML(managers) {
         let html = '';
-        managers.forEach(function(manager) {
+        managers.forEach(function (manager) {
             html += `
              <article class="col-md-4 ">
                 <div class="card">
                     <div class="card-header" style="background-color: red; color:white;">
-                        <h2>$(manager.getName())</h2>
+                        <h2>${manager.getName()}</h2>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">ID:${getId()}</li>
+                        <li class="list-group-item">Email: ${manager.getEmail()}</li>
+                        <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
                     </ul>
                 </div>
             </article>
@@ -47,7 +47,7 @@ const generateHTML = function(team) {
         </header>
         <main class="container text-center p-5">
             <section class="row">
-                $(generateTeam(team)}
+                ${generateTeam(team)}
     
             </section>
         </main>
