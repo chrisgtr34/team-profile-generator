@@ -1,33 +1,27 @@
 const generateTeam = function (team) {
     let html = '';
 
-    function generateManagerHTML(managers) {
-        managers.forEach(function (manager) {
-            html += `
-             <article class="col-md-4 ">
-                <div class="card">
-                    <div class="card-header" style="background-color: red; color:white;">
-                        <h2>${manager.getName()}</h2>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ID:${getId()}</li>
-                        <li class="list-group-item">Email: ${manager.getEmail()}</li>
-                        <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
-                    </ul>
+    team.managers.forEach(function (manager) {
+        html += `
+        <article class="col-md-4 ">
+            <div class="card">
+                <div class="card-header" style="background-color: red; color:white;">
+                    <h2>${manager.getName()}</h2>
                 </div>
-            </article>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID:${manager.getId()}</li>
+                    <li class="list-group-item">Email: ${manager.getEmail()}</li>
+                    <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
+                </ul>
+            </div>
+        </article>  
+        `;
 
-            
-            `;
-            
-        });
-        return html;
-    }
-
-    generateManagerHTML(team.managers);
+    });
+ return html;
 }
 
-const generateHTML = function(team) {
+const generateHTML = function (team) {
     return `
     <!doctype html>
     <html lang="en">

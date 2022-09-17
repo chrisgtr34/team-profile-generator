@@ -1,16 +1,17 @@
+const fs = require('fs');
 const inquirer = require('inquirer');
-const fs = require ('fs');
+
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
-const Intern = require('./lib/Intern')
+const Intern = require('./lib/Intern');
 
 const generateHTML = require('./src/generateHTML');
 
 const managers = [];
 const engineers = [];
-const Interns    = [];
+const interns = [];
 
-function createManager(){
+function createManager() {
     inquirer
         .prompt([
             {
@@ -33,18 +34,18 @@ function createManager(){
                 name: 'officeNumber',
                 message: 'What is the office number of the Manager?'
             },
-        ]).then(function(answers){
+        ]).then(function (answers) {
             console.log(answers);
-            const {id, email, name, officeNumber}
-            = answers;
+            const { id, email, name, officeNumber }
+                = answers;
             managers.push(new Manager(id, email, name, officeNumber));
             console.log(managers);
 
             createTeam();
-            
+
         })
 }
-function creatIntern(){
+function creatIntern() {
     inquirer
         .prompt([
             {
@@ -67,20 +68,20 @@ function creatIntern(){
                 name: 'school',
                 message: 'What is the school name of the Intern?'
             },
-        ]).then(function(answers){
+        ]).then(function (answers) {
             console.log(answers);
-            const {id, email, name, school}
-            = answers;
+            const { id, email, name, school }
+                = answers;
             Interns.push(new Intern(id, email, name, school));
             console.log(Interns);
 
             createTeam();
-            
+
         });
 }
 
 
-function createEngineer(){
+function createEngineer() {
     inquirer
         .prompt([
             {
@@ -103,9 +104,9 @@ function createEngineer(){
                 name: 'github',
                 message: 'What is the github username of the Engineer?'
             },
-        ]).then(function(answers){
+        ]).then(function (answers) {
             console.log(answers);
-            const{id, email, name, github} = answers;
+            const { id, email, name, github } = answers;
             engineers.push(new Engineer(id, email, name, github));
             console.log(engineers);
             createTeam();
@@ -113,18 +114,19 @@ function createEngineer(){
 
 }
 
-function createTeam(){
+function createTeam() {
     inquirer
         .prompt([
             {
                 type: 'list',
                 name: 'menuOption',
                 message: 'Which employee will you like to add?',
-                choices: ['Intern','Engineer','None']
+                choices: ['Intern', 'Engineer', 'None']
             },
-        ]).then(function(answers){
+        ]).then(function (answers) {
             console.log(answers);
-            switch(answers.menuOption){
+            
+            switch (answers.menuOption) {
                 case 'Intern':
                     creatIntern();
                     break;
@@ -133,12 +135,12 @@ function createTeam(){
                     break;
                 default:
                     fs.writeFileSync('./dist/team.html', generateHTML({ managers, engineers, interns }));
-                    
+
                     return;
 
             }
         });
-    
+
 }
 
 createManager();
