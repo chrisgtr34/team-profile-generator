@@ -72,8 +72,8 @@ function creatIntern() {
             console.log(answers);
             const { id, email, name, school }
                 = answers;
-            Interns.push(new Intern(id, email, name, school));
-            console.log(Interns);
+                interns.push(new Intern(id, email, name, school));
+            console.log(interns);
 
             createTeam();
 
@@ -125,7 +125,7 @@ function createTeam() {
             },
         ]).then(function (answers) {
             console.log(answers);
-            
+
             switch (answers.menuOption) {
                 case 'Intern':
                     creatIntern();

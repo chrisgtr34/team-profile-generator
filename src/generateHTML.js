@@ -18,6 +18,40 @@ const generateTeam = function (team) {
         `;
 
     });
+
+    team.engineers.forEach(function(engineer) {
+        html += `
+        <article class="col-md-4 ">
+            <div class="card">
+                <div class="card-header" style="background-color: red; color:white;">
+                    <h2>${engineer.getName()}</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID:${engineer.getId()}</li>
+                    <li class="list-group-item">Email: ${engineer.getEmail()}</li>
+                    <li class="list-group-item">GitHub: <a href="https://www.github.com/${engineer.getGitHub()}>${engineer.getGitHub()}L</a></li>
+                </ul>
+            </div>
+        </article>  
+        `; 
+    })
+    team.interns.forEach(function(intern) {
+        html += `
+        <article class="col-md-4 ">
+            <div class="card">
+                <div class="card-header" style="background-color: red; color:white;">
+                    <h2>${intern.getName()}</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID:${intern.getId()}</li>
+                    <li class="list-group-item">Email: ${intern.getEmail()}</li>
+                    <li class="list-group-item">School: <a href = "mailto:${intern.getSchool()}">${intern.getSchool()}</a></li>
+                </ul>
+            </div>
+        </article>  
+        `; 
+    })
+
  return html;
 }
 
