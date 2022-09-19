@@ -45,7 +45,7 @@ function createManager() {
 
         })
 }
-function creatIntern() {
+function createIntern() {
     inquirer
         .prompt([
             {
@@ -128,7 +128,7 @@ function createTeam() {
 
             switch (answers.menuOption) {
                 case 'Intern':
-                    creatIntern();
+                    createIntern();
                     break;
                 case 'Engineer':
                     createEngineer();
