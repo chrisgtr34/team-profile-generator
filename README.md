@@ -20,10 +20,8 @@
   chrisgtr34@yahoo.com
  
 
-![alt screen shot](./Screen%20Shot%202022-09-11%20at%2012.17.02%20AM.png)
+![alt screen shot](./Screen%20Shot%202022-09-19%20at%2012.47.24%20AM.png)
 
-[GitHub repository](https://github.com/chrisgtr34/Professional-README-Generator)
+[GitHub repository](https://github.com/chrisgtr34/team-profile-generator)
 
-[Deployed application](https://chrisgtr34.github.io/Professional-README-Generator/)
-
-[Demo Video](https://drive.google.com/file/d/19pFPgcGfLHyWOo-1RndXDKaEJfi7ZOnd/view)
+[Demo](https://drive.google.com/file/d/1mI0c0j6XhLw0ecLIMYdch3tF9JBuWLGx/view)
