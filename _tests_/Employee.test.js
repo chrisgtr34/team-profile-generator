@@ -1,7 +1,7 @@
 const Employee = require('../lib/Employee');
 
 describe('Test the Employee Class',() => {
-    it('should create a new employee', () => {
+    it('will create a new employee', () => {
         const me = new Employee (1, 'chrisgtr34@gmail.com', 'chris');
         expect(typeof me).toBe('object');
     })
